@@ -1,8 +1,8 @@
-"use client";
 import { gql, useQuery } from "@apollo/client";
-import { ApolloProvider } from "@/lib/apollo/ApolloProvider";
+import { Heading, VStack } from "@chakra-ui/react";
+import { NextPage } from "next";
 
-export default function Page() {
+const Page: NextPage = () => {
   const GET_IPNFTS = gql`
     query IPNFTs {
       ipnfts {
@@ -17,11 +17,13 @@ export default function Page() {
   if (error) return <p>Error : {error.message}</p>;
 
   return (
-    <section>
-      <h1>IPNFTs</h1>
+    <VStack>
+      <Heading>IPNFTs</Heading>
       {data.ipnfts.map((i: any) => (
         <p key={i.id}>{i.id}</p>
       ))}
-    </section>
+    </VStack>
   );
-}
+};
+
+export default Page;
