@@ -17,7 +17,7 @@ const Page: NextPage = () => {
   if (error) return <p>Error : {error.message}</p>;
 
   return (
-    <VStack>
+    <VStack w="full">
       <Heading>IPNFTs</Heading>
       {data.ipnfts.map((i: any) => (
         <p key={i.id}>{i.id}</p>
