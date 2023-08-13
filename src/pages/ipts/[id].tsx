@@ -10,12 +10,16 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
-const ValueForm = () => {
+const IPTPage = () => {
+  const router = useRouter();
+
+  const iptId = router.query.id as string;
   return (
     <form>
       <VStack gap={6}>
-        <Heading>Buy some tokens</Heading>
+        <Heading>IPT #{iptId}</Heading>
         <Flex direction="row" gap={2}>
           <FormControl>
             <FormLabel>Buy Amount</FormLabel>
@@ -32,9 +36,8 @@ const ValueForm = () => {
           </FormControl>
         </Flex>
       </VStack>
-      #
     </form>
   );
 };
 
-export default ValueForm;
+export default IPTPage;

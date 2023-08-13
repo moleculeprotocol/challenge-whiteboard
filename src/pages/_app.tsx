@@ -63,8 +63,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <HStack justify="center" w="full" justifyContent="space-evenly">
                   <Flex>Logo</Flex>
                   <Flex justify="space-between" gap={2}>
-                    <Link href="/ipnfts">IPNFTs</Link>
-                    <Link href="/value">Trade</Link>
+                    <Link href="/ipts">All IPTs</Link>
                   </Flex>
                   <ConnectButton />
                 </HStack>
